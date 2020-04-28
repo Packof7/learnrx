@@ -9,10 +9,19 @@
           "manifest": "./src/webparts/intro/IntroWebPart.manifest.json"
         }
       ]
+    },
+    "pack-client-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/packClient/PackClientWebPart.js",
+          "manifest": "./src/webparts/packClient/PackClientWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "IntroWebPartStrings": "lib/webparts/intro/loc/{locale}.js"
+    "IntroWebPartStrings": "lib/webparts/intro/loc/{locale}.js",
+    "PackClientWebPartStrings": "lib/webparts/packClient/loc/{locale}.js"
   }
 }
