@@ -1,4 +1,4 @@
-const url = endpoints.SLIDESHOW_DATA;
+const url = "http://httpbin.org/json";
 
 fetch(url)
   .catch((err) => {

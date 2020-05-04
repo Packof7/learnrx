@@ -1,4 +1,4 @@
-const url = endpoints.SLIDESHOW_DATA;
+const url = "http://httpbin.org/json";
 const fetchData = (errorCallback, successCallback, uri, type = "json") => {
   fetch(uri)
     .then((res) => {
@@ -19,7 +19,7 @@ fetchData(
   },
   (data) => {
     const text = JSON.stringify(data, undefined, 2);
-    addResponseText(text);
+    console.log(text);
   },
   url
 );
