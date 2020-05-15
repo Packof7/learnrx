@@ -6,6 +6,10 @@ const promises = [];
 
 promises.push(fetch(url1), fetch(url3), fetch(url3));
 
+Promise.race((resolve, reject) => {
+  setTimeout(reject, 3E3);
+}, fetch(url1));
+
 Promise.all(promises)
   .catch((err) => {
     alert("Something went wrong!\n\nError was: " + err);

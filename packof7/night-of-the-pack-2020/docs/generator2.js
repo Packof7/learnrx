@@ -7,7 +7,7 @@ const fetchData = function* () {
   let skip = false;
 
   while (!skip) {
-    skip = yield data;
+    skip = yield Math.random();
   }
 
   return "end";

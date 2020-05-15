@@ -19,7 +19,7 @@
       "group": { "default": "Other" },
       "title": { "default": "PackClient" },
       "description": { "default": "PackClient description" },
-      "officeFabricIconFontName": "World",
+      "iconImageUrl": "https://avatars1.githubusercontent.com/u/63854172?s=200&v=4",
       "properties": {
         "description": "PackClient"
       }
