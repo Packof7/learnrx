@@ -1,15 +1,14 @@
+import * as strings from 'PackClientWebPartStrings';
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
+
 import { Version } from '@microsoft/sp-core-library';
 import {
-  BaseClientSideWebPart,
-  IPropertyPaneConfiguration,
-  PropertyPaneTextField
+    BaseClientSideWebPart, IPropertyPaneConfiguration, PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
 
-import * as strings from 'PackClientWebPartStrings';
-import PackClient from './components/PackClient';
 import { IPackClientProps } from './components/IPackClientProps';
+import App from './components/PackClient';
 
 export interface IPackClientWebPartProps {
   description: string;
@@ -19,7 +18,7 @@ export default class PackClientWebPart extends BaseClientSideWebPart<IPackClient
 
   public render(): void {
     const element: React.ReactElement<IPackClientProps > = React.createElement(
-      PackClient,
+      App,
       {
         description: this.properties.description
       }

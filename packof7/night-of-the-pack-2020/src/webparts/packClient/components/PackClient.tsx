@@ -1,8 +1,12 @@
-import * as React from "react";
-import styles from "./PackClient.module.scss";
-import { IPackClientProps } from "./IPackClientProps";
-import { escape } from "@microsoft/sp-lodash-subset";
-import { Text, PrimaryButton, CompoundButton } from "@fluentui/react";
+import * as React from 'react';
+import { Provider } from 'react-redux';
+
+import { CompoundButton, PrimaryButton, Text } from '@fluentui/react';
+import { escape } from '@microsoft/sp-lodash-subset';
+
+import { store } from '../redux/store';
+import { IPackClientProps } from './IPackClientProps';
+import styles from './PackClient.module.scss';
 
 enum endpoints {
   SLIDESHOW_DATA = "https://httpbin.org/json",
@@ -19,7 +23,7 @@ enum targetSections {
   OBSERVABLES,
 }
 
-export default function PackClient(props: IPackClientProps) {
+const PackClient: React.FC<IPackClientProps> = (props) => {
   const [responseText, setResponseText] = React.useState("");
   const [duration, setDuration] = React.useState(0);
   const [startTime, setStartTime] = React.useState(+new Date());
@@ -245,5 +249,13 @@ export default function PackClient(props: IPackClientProps) {
         </div>
       </div>
     </div>
+  );
+};
+
+export default function App(props: IPackClientProps) {
+  return (
+    <Provider store={store}>
+      <PackClient {...props} />
+    </Provider>
   );
 }
